@@ -1,0 +1,157 @@
+@import "libs/variables.scss";
+@import "libs/functions.scss";
+@import "libs/mixins.scss";
+
+@media #{$desktop-up} {
+    .litlecircle {
+        margin-top: 1vh;
+        width: 2vw;
+        height: 2vw;
+        border-radius: 1vw 1vw;
+        line-height: 2vw;
+        font-size: 1.3rem;
+    }
+    .valign {line-height: 3.5vh;}
+.form--connexion {
+    margin-left: -2vw;
+}
+
+    // Accueil
+#body_home {
+    background-image: url(../../img/home_d.jpg);
+    background-position: top 20% left 18vw; 
+}
+@keyframes connexion {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+.anim--connexion {
+    -webkit-animation: connexion 4s;
+    animation: connexion 4s;
+    animation-fill-mode: forwards;
+}
+
+header {
+    & nav {
+        left: 2vw;
+        margin: -5vh auto 0 auto;
+        font-size: 2rem;
+        width: 60vw;
+        height: 110vh;
+        border-radius: 0 120vw 120vw 0 ;
+        margin-left: -25vw;
+       & #connexion {
+            margin: 58vh 0 0 33.5vw;
+            & #connexion_input {
+                width: 80%;
+            & input {
+                width: 80%;
+            }
+        }
+        }
+      &  #inscription {
+            margin: 0 0 0 33.5vw;
+            & #inscription_input {
+                margin-left: -5vw;
+                width: 100%;
+                text-align: left;
+                line-height: 1rem;
+                & .dropdown-toggle {
+                    height: 5vh !important;
+                }
+                & #dropdown_departement {
+                    line-height: 1.5rem;
+                }
+                & #inscription-departement {
+                    height: 5vh;
+                    margin-bottom: 0;
+                }
+                & #inscription_file {
+                    margin-bottom: -2vh;
+                    & .fa-user-alt {
+                        font-size: 1.2rem;
+                    }
+                    & label {
+                        height: 5vh;
+                        border-radius: 1vw 1vw 1vw 1vw;
+                        font-size: .9rem;
+                        color: white;
+                        line-height: 5vh;
+                        text-align: right;
+                        background-color: $secondary;
+                    }
+                    & input[type=file]{
+                        display: none;
+                    }
+                }
+            & #inscription_firstname, #inscription_lastname, #inscription_email, #inscription_password {
+                height: 3vh; 
+                width: 70%;
+                margin-top: .5vh;
+            }
+              &  #inscription_button {
+                  margin-top: .2em;
+                  text-align: center;
+                  & #inscription_reponse {
+                      padding-top: 1vh;
+                      font-size: 1rem;
+                  }
+              }
+            }
+
+
+
+               }
+        
+
+    }
+    & #logo_img { 
+        top: 41.5%;  
+        left: 51%;
+        width: 7vw;
+        }    
+    & #logo_text {
+        position: absolute;
+        top: 41%;
+        left: 19.4vw;
+        height:7vw;
+        z-index: 10;
+        }  
+}
+
+// Footer
+footer {
+     bottom: 0vh;
+     height: 7vh;
+     & #footer_barre {
+         width: 20.5vw;
+         margin-top: -7vh;
+         margin-left: -20.5vw;
+         padding-left: 2vw;
+     }
+     & #footer_rond {
+     width: 3vw;
+     height: 7vh;
+     border-radius: 0 3.5vw 3.5vw 0;
+     margin-left: 0vw;
+     & #fleche_footer {
+         width: 100%;
+         margin-top: 35%;
+         transform: rotate(90deg);
+        }
+    }
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

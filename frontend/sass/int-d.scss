@@ -1,0 +1,471 @@
+@import "libs/variables.scss";
+@import "libs/functions.scss";
+@import "libs/mixins.scss";
+
+@media #{$desktop-up} {
+    body { 
+        height: 100vh;
+        overflow: hidden;
+    }
+    .txtweight {font-weight: 600;}
+    #backgroung--body {
+        margin: -25vh auto 0 -45vw;
+        font-size: 2rem;
+        width: 60vw;
+        height: 150vh;
+        border-radius: 0 120vw 120vw 0 ;
+        background-color: $primary; 
+        overflow: hidden;
+    }
+    header {
+        position: fixed;
+        top: 2vh;
+        left: 2vw;
+        z-index: 10;
+        & #header_int{
+            & #logo_int {
+            background-image: url('../../img/logo_int_d.svg');
+            // background-position: top 20% left 18vw; 
+                background-repeat: no-repeat; 
+            width: 20vw;
+            height: 20vh;
+            //   margin: 10vh 0 0 46vw;
+            }
+        }
+    }
+    #dropdown--profil {
+        position: fixed;
+        top: 20vh;
+        left: 8.5vw;
+        width: 25vw;
+        // margin-bottom: 15vh;
+        font-weight: 600;
+        z-index: 20;
+        & p { font-size: 2.5rem;}
+        & #items_profil {
+            margin: -9vh 0 0 -6vw;
+            color: $secondary;
+            & li {
+                width: 3vw;
+                height: 3vw;
+                margin-bottom: .5vw;
+                border-radius: 1.5vw 1.5vw;
+                line-height: 3vw;
+                text-align: center;
+                color: white;
+                background-color: $secondary;
+            }
+        }
+    }
+
+    .message1 {
+        margin-top: .3vh;
+        margin-left: 2.8vw;
+        font-size: 5vh;
+        color: $primary;
+    }
+    .message2 {
+        margin-top: -.5vh;
+        margin-left: -2.8vw;
+        font-size: 5vh;
+        -webkit-text-fill-color: $primary;
+        -webkit-text-stroke-color: white;
+        -webkit-text-stroke-width: .05rem; 
+        z-index: 10;
+    }
+    main {
+            position: fixed !important;
+            top: 30vh;
+            left: 7vw;
+            height: 65vh;
+            z-index: 10;
+            .nav_int {
+                margin-top: 3vh;
+            }
+            & #circle--messages {
+                margin: 3vh 0 0 -1vw;
+            }
+            & .add-article {
+                width: 3vw;
+                height: 3vw;
+                margin-top: -8vh;
+                margin-left: 3.5vw;
+                border-radius: 1.5vw 1.5vw;
+                line-height: 2.5vw;
+                text-align: center;
+                font-size: 2rem;
+                font-weight: 800;
+                color: white;
+                z-index: 10;
+            }
+            & .nav--circle {    
+                width: 5vw;
+                height: 5vw;
+                border-radius: 2.5vw 2.5vw;
+                font-size: 5vh;
+                line-height: 5vw;
+                margin: 25vh 0 0 -31.5vw;
+                background-color: white;
+                & .fa-caret-down {
+                    font-size: 10vh;
+                    color: $primary;
+                }
+            }
+            & #circle--images {
+                margin: 17vh 0 0 -30.5vw;
+            }
+            & #circle--images--profil {
+                margin: 17vh 0 0 -32.5vw;
+            }
+            & #articles {
+                position: fixed;
+                top: 25vh;
+                left: 15vw;
+                width: 84vw;
+                overflow: hidden;
+                z-index: 10;
+            }
+            & .overfolow-y {
+                height: 70vh;
+                overflow-y: scroll;
+            }
+            & #articles--1 {
+                padding-top: 1vh;
+            }
+            & #articles--2 {
+                height: 70vh;
+                padding-top: .2vh;
+                overflow-y: scroll;
+            }
+            section {
+                margin: 0 0 4vh 2vw;
+                & .articlebody {
+                    margin-left: 2vw; 
+                    width: 85%;
+                    & article {
+                        width: 100%;
+                        margin: -.5vh 1vw 0 2vw;
+                        border: 3px solid $secondary;
+                        & .circles {
+                            margin-left: -8vw !important;
+                            & .circle-moyen {
+                                width: 5vw;
+                                height: 5vw;
+                                border-radius: 2.5vw 2.5vw;
+                                margin: -.37vh 1vw 0 5.2vw;
+                                font-size: 2.5rem;
+                                line-height: 5vw;
+                                color: white;
+                                overflow: hidden;
+                                }
+                            & a .avatar {
+                                margin-top: 1vh;
+                                & img {
+                                    min-width: 105%;
+                                    min-height: 105%;
+                                    width: auto;
+                                    height: auto;
+                                }
+                            }
+                            & .action {
+                                width: 3vw;
+                                height: 3vw;
+                                border-radius: 1.5vw 1.5vw;
+                                margin-top: 1.5vw;
+                                margin-left: 6.3vw;
+                                padding-top: .5rem;
+                                text-align: center;
+                                font-size: 1rem;
+                                line-height: 4vh; 
+                                color: white;
+                                background-color: $primary;
+                            }
+                        }
+                        & .message {
+                            width: 80%;
+                            & textarea {
+                            width: 100%;
+                            padding: 0 1vw 0 1vw;
+                            }
+                            & .article--titre {
+                                margin-left: -10vw;
+                                padding: 2.5vh 0 0 10vw;
+                                font-size: 2rem;
+                                line-height: 2rem;
+                            }
+                            & .article--titre--ellipsis {
+                               // height: 3vh;
+                                margin-left: -10vw;
+                                padding: 2.5vh 0 0 10vw;
+                                width: 115%;
+                                font-size: 2rem;
+                                line-height: 2rem;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                -ms-text-overflow: ellipsis;
+                            }
+                            & .informations {
+                                padding: 1vh 7vw 0 0;
+                                font-size: 1.1rem;
+                                & .author {
+                                    font-weight: 800;
+                                }
+                            }
+                            & .download--file {
+                                padding-top: .7vh;
+                                & label {
+                                    height: 6vh;
+                                    width: 6vw;
+                                // padding-right: .7vw !important;
+                                    border-radius: 1vw 1vw 1vw 1vw;
+                                    text-align: center;
+                                    line-height: 6vh;
+                                    color: white;
+                                    background-color: $secondary;
+                                }
+
+                                & .caption {
+                                    width: 80%;
+                                }    
+                            }
+                            & .file {
+                                height: 30vh;
+                                margin-top: .5vh;
+                            }
+                            & .article--body {
+                                font-size: 1.3rem;
+                                & .first--p {
+                                    margin-top: -3vh;
+                                }
+                                & textarea {
+                                    margin-top: 1vh;
+                                }
+                            }
+                            & .button--update {
+                                margin: 2vh 0 1vh 0;
+                                width: 3vw;
+                                height: 3vw;
+                                border-radius: 1.5vw 1.5vw;
+                                text-align: center;
+                                font-size: .8rem;
+                                font-weight: 800;
+                                line-height: 3vw;
+                                color: white;
+                                background-color: $primary;  
+                            } 
+                            & .button--cancel {
+                                @extend .button--update;
+                            }   
+                        }
+                    }
+                }
+                & aside {
+                    margin-left: -2vw;
+                        & .circle-like {
+                        width: 2.5vw;
+                        height: 2.5vw;
+                        border-radius: 1.2vw 1.2vw;
+                        margin-top: 1.2vw;
+                        margin-left: 1.7vw;
+                        padding-top: .5rem;
+                        text-align: center;
+                        font-size: 1rem;
+                        line-height: .8rem;
+                        color: white;
+                        background-color: $secondary;
+                        & .number-like {
+                            font-size: .7rem; 
+                        }
+                    }
+                    & .liked {
+                            margin-top: -.25rem;
+                            margin-left: -.5rem;
+                            width: 4vw;
+                            height: 4vw;
+                            border-radius: 2vw 2vw;
+                            background-color: $primary;
+                            z-index: 10;
+                            }
+                }
+            }
+            & #new-article {
+                margin-left: 1vw;
+            & .message--label {
+                z-index: 10;
+                & label {
+                    width: 5vw;
+                    height: 5vw;
+                    border-radius: 2.5vw 2.5vw;
+                    font-size: 1.2rem;
+                    line-height: 5vw;
+                    color: white;
+                }
+            }
+            & .message--label--image {
+                @extend label;
+                margin-top: 1vh;
+            }
+            & .label-file {
+                height: 4vw;
+                margin: 2vh 0 3.5vh 3.5vw;
+                border-radius: 1vw 1vw 1vw 1vw;
+                text-align: center;
+                line-height: 4vw;
+                color: white;
+                background-color: $secondary;
+            }
+            & input[type=file]{
+                display: none;
+            }
+            & textarea {
+                padding: 2vh 0 0 4vw;
+                margin-left: -4vw;
+            }
+            & .message--textarea--title {
+                height: 5vw;
+            }           
+            & .button--post {
+                margin: 2vh 0 2vh 0;
+                width: 3vw;
+                height: 3vw;
+                border-radius: 1.5vw 1.5vw;
+                text-align: center;
+                font-weight: 800;
+                line-height: 3vw;
+                color: white;
+                background-color: $primary;  
+            } 
+            & .button--cancel {
+                @extend .button--post;
+            }
+        }
+
+            // Profile           
+            & .nav--circle--profil {   
+                width: 5vw;
+                height: 5vw;
+                border-radius: 2.5vw 2.5vw;
+                font-size: 5vh;
+                line-height: 5vw;
+                margin: 0 0 0 -.5vw;
+                padding-left: .5vw;
+                background-color: white;
+                & .fa-caret-down {
+                    font-size: 10vh;
+                    color: $primary;
+                }
+            }
+            & #options {
+                position: fixed;
+                margin: 22.5vh 0 0 -1.5vw !important;
+                z-index: 20;
+            }
+
+            & #select-options {
+                margin: 17vh 0 0 -30.5vw;
+                & #select {
+                    margin: 0 0 0 0;
+                    background-color: white;
+                    color: $primary;
+                    & .fa-caret-down {
+                        transform: rotate(-90deg);
+                        color: $primary;
+                    }
+                }
+            }
+            & #partage--profil {
+                margin: 17vh 0 0 -2vw;
+            }
+            & #options {
+                margin: -30vh 0 0 .5vw;
+                width: 15vw;
+                & .circle-moyen {
+                    width: 2.5vw;
+                    height: 2.5vw;
+                    border-radius: 1.2vw 1.2vw;
+                    margin: 0 1vw 20vh 5.2vw;
+                    font-size: 1rem;
+                    line-height: 2.5vw;
+                    color: white;
+                    overflow: hidden;
+                }   
+            }
+            #user--profil {        
+                @extend #articles;
+                & .circle-moyen {
+                    width: 10vw;
+                    height: 10vw;
+                    border-radius: 5vw 5vw;
+                    margin: 0 1vw 20vh 5.2vw;
+                    font-size: 1.5rem;
+                    line-height: 10vw;
+                    color: white;
+                    overflow: hidden;
+                }
+                & .m--profile {
+                    margin-bottom: 20vh;
+                }
+                & #author--profil {
+                    margin-left: 7vw;
+                    & img {
+                    height: 100%;
+                    display: block;}
+                    & #initial-author {
+                        line-height: 10vw;
+                        font-size: 4rem;
+                        font-weight: 800; 
+                    }
+                }
+                & #departement--name {
+                    line-height: 10vw;
+                    text-align: left;
+                    font-size: 1.4rem;
+                    font-weight: 800;
+                }
+                & #firstname {
+                    @extend #departement--name;
+                }
+                & #lastname {
+                    @extend #departement--name;
+                }
+               & .update--desktop {
+                   width: 50vw;
+                   margin-left: 15vw;
+                   & #author {
+                    margin-left: -1vw;
+                    }
+                    & input {
+                    font-weight: 600;
+                    }  
+                    & .label-file {
+                    height: 4vw;
+                    margin: 5vh 0 0 3.5vw;
+                    border-radius: 1vw 1vw 1vw 1vw;
+                    text-align: center;
+                    line-height: 4vw;
+                    color: white;
+                    background-color: $secondary;
+                    }
+                    & #update_lastname {
+                    margin-left: 2vw;
+                    }
+                    & .departement--name {
+                        margin-top: -7vh;
+                    }
+                    & .dropup {
+                        height: 7vh;
+                    }
+                }
+                #button--update {
+                    & .litlecircle {
+                        background-color: $primary;
+                        color: white;
+                    }
+                    & #valid--profil {
+                        font-weight: 800;
+                    }
+                }
+        }
+    }
+}

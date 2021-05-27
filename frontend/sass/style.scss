@@ -1,0 +1,105 @@
+@import "libs/reset.scss";
+@import "libs/variables.scss";
+@import "libs/functions.scss";
+@import "libs/mixins.scss";
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: hidden;
+}
+
+body {font-family: "Arial", sans-serif;}
+a:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+.cursor {cursor: pointer;}
+.hidden {display: none;}
+.block {display: unset;}
+
+.bgblue {background: $secondary !important;}
+.bgred {background-color: red;}
+.txtblue {color: $secondary !important;}
+.txtweight {font-weight: 800;}
+
+.litlecircle {
+    color: $secondary;
+    background-color: #fff;
+}
+
+// Accueil
+@keyframes connexioninput {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  .form--inscription {
+    -webkit-animation: connexioninput 4s;
+    animation: connexioninput 4s;
+    animation-fill-mode: forwards;
+}
+  
+#body_home { 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    overflow: hidden;
+}
+header{
+    & nav {
+        position: relative;
+        padding-top: 2.5vh;
+        color: white;
+        font-weight: 600;
+        text-align: center;
+        overflow: hidden;
+        background-color: $primary;    
+        & input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #fff;
+            margin-bottom: .2em;
+            font-size: 1rem;
+            color: white;
+        }
+        ::placeholder {
+            color: white;
+            opacity: .5;
+            font-size: 1rem;
+          }
+                  &  #connexion_button {
+            margin-top: .2em;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            & #connexion_reponse {
+                padding-top: .3rem;
+                font-size: 1rem;
+            }
+        }
+
+    }
+& #logo_img {
+        position: absolute;
+        transform: translate(50%, 0);
+}
+}
+
+// Footer
+footer {
+    position: fixed;
+     overflow: hidden;
+     & #footer_barre {
+        height: 11.5vh;
+        background-color: $secondary;
+        color: white;
+        font-size: .7rem;
+        z-index: 10;
+        & .footer_fontsize {font-size: 1.5rem;}
+     }
+     & #footer_rond {
+        text-align: center;
+        background-color: $secondary;
+     }
+}

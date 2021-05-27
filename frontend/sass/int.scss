@@ -1,0 +1,201 @@
+@import "libs/reset.scss";
+@import "libs/variables.scss";
+@import "libs/functions.scss";
+@import "libs/mixins.scss";
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: hidden;
+}
+
+body {font-family: "Arial", sans-serif;}
+
+.bgprimary {background: $primary !important;}
+.bgsecondary {background: $secondary !important;}
+.bgwhite {background: white !important;}
+.bgred {background: red !important;}
+.txtprimary {color: $primary !important;}
+.txtsecondary {color: $secondary !important;}
+.txtwhite {color: white !important;}
+.cursor {cursor: pointer;}
+.hidden {display: none;}
+a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+a:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+.no--like {
+    padding-top: .5vh;
+}
+.notin-message2 {
+    margin-left: -3vw;
+    margin-top: -.5vh;
+    -webkit-text-fill-color:white;
+    -webkit-text-stroke-color: $secondary;
+    -webkit-text-stroke-width: .05rem; 
+    z-index: 10;  
+}
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000;
+    margin-bottom: 7vh;
+    font-size: 1rem;
+}
+input[type=file]{
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+
+main {
+    & #noselect {
+        & #nav--logo {
+            width: 85%;
+            margin-top: -.6vh;
+        }
+    }
+    & #options {
+        margin-top: 2vh;
+        & .circle-moyen {
+            width: 10vw;
+            height: 10vw;
+            border-radius: 5vw 5vw;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.2rem;
+            line-height: 10vw;
+            color: white;
+        }
+        & .dropdown-menu {
+            margin-top: 5.5vh;
+            margin-left: 15vw;
+        }
+    }
+    & #filtres {
+        @extend #options;
+        & .fa-clock {
+            margin-top: -.05rem;
+            font-size: 2.4rem;
+        }    
+        & .dropdown-menu {
+            margin-top: 5.5vh;
+            margin-left: 15vw;
+        }
+    }
+    // Tous les messages
+    & #new-article {
+        margin-top: 3vh;
+        & .message { 
+            margin-top: 2vh;
+            & img {margin-left: -3vw;}
+        }  
+    }
+    & #articles--1 {
+        margin: 3vh 0 4vh 0;
+    }
+    & #articles--2 {
+        @extend #articles--1
+    }
+    & #options { @extend #filtres }
+    & #article {
+        height: 73vh;
+        margin-top: 3vh;
+        & .message {
+            display: flex;
+            width: 80vw;   
+            margin-left: 7vw;
+            border: 1px solid $secondary;
+            & article {
+                margin-left: 5vw;
+                padding-bottom: 2vh;
+                width: 100%;
+                & .info--message {
+                    margin: -.3vh 1vw 0 -16.5vw;
+                    z-index: 10;
+                    & #author img {
+                        width: 15vw;
+                        height: 15vw;
+                        border-radius: 7.5vw 7.5vw;
+                        max-width:100%;
+                        max-height:100%;
+                        margin-top: -.5vh;
+                    }
+                     & .circle-moyen {
+                     width: 15vw;
+                     height: 15vw;
+                     margin-bottom: 1vh;
+                     border-radius: 7.5vw 7.5vw;
+                     font-size: 1.5rem;
+                     line-height: 15vw;
+                     color: white;
+                     }
+                }
+                & .article--text {
+                    width: 98%;
+                    margin-left: 2vw;
+                    padding: 1vh 0 0 10vw;
+                    & h2 {
+                        width: 95%;
+                        margin: 1vh 0 2vh 0;
+                        font-weight: 800;
+                        font-size: 1.2rem;
+                    }
+                    & .time {
+                        font-size: .8rem;
+                    }
+                    & .author {
+                        @extend .time;
+                        font-weight: 800;
+                    }
+                    & .text {
+                        max-height: 53vh;
+                        overflow-y: scroll;
+                        margin-top: 1vh;
+                        font-size: 1rem;
+                        text-align: justify;
+                    & p { margin-bottom: .5vh; }
+                  }
+                }
+            }
+            & aside {
+                margin-right: -5vw;
+                & .circle-like {
+                    width: 10vw;
+                    height: 10vw;
+                    border-radius: 5vw 5vw;
+                    margin-top: 2.5vw;
+                    margin-left: -5vw;
+                    padding-top: .5rem;
+                    text-align: center;
+                    font-size: .8rem;
+                    line-height: .8rem;
+                    color: white;
+                    background-color: $secondary;
+                    & .number-like {
+                        font-size: .7rem; 
+                    }
+                }
+                & .liked {
+                    margin-top: -.25rem;
+                    margin-left: -.45rem;
+                    width: 4vw;
+                    height: 4vw;
+                    border-radius: 2vw 2vw;
+                    background-color: $primary;
+                    z-index: 10;
+                }
+            }
+        }
+    }
+}
+// Fermeture media query
+}

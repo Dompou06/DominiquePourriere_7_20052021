@@ -1,0 +1,28 @@
+/* Enlever l'unité */
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+      @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+  }
+/* Convertir pixel en rem */
+@function rem($size, $base: $base-font-size) {
+    @return 1rem * $size / strip-unit($base);
+}
+/* Convertir pixel en em */
+@function em($size, $base: $base-font-size) {
+    @return 1em * $size / strip-unit($base);
+}
+/* Convertir pixel en % */
+@function purcent($size, $base: 375) {
+    @return 1% * ($size * 100) / $base;
+}
+
+@function purcen($size) {
+    @return 1% * ($size);
+}
+
+/* Convertir pixel en vw */
+@function vw($size, $base: 375) {
+    @return 1vw * ($size * 100) / $base;
+}

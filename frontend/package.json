@@ -1,0 +1,33 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "style": "sass --watch ./sass/style.scss:./public/assets/css/style.css",
+    "desktop": "sass --watch ./sass/style-d.scss:./public/assets/css/style-d.css",
+    "mobile": "sass --watch ./sass/style-m.scss:./public/assets/css/style-m.css",
+    "tablette": "sass --watch ./sass/style-t.scss:./public/assets/css/style-t.css",
+    "int": "sass --watch ./sass/int.scss:./public/assets/css/int.css",
+    "int-m": "sass --watch ./sass/int-m.scss:./public/assets/css/int-m.css",
+    "int-d": "sass --watch ./sass/int-d.scss:./public/assets/css/int-d.css",
+    "profil-d": "sass --watch ./sass/profile-d.scss:./public/assets/css/profil-d.css",
+    "footer": "sass --watch ./sass/footer.scss:./public/assets/css/footer.css",
+    "footer-m": "sass --watch ./sass/footer-m.scss:./public/assets/css/footer-m.css",
+    "footer-d": "sass --watch ./sass/footer-d.scss:./public/assets/css/footer-d.css",
+    "info": "sass --watch ./sass/info.scss:./public/assets/css/info.css",
+    "lint": "eslint controllers models routes middleware --fix",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.24.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^4.5.0",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7"
+  }
+}
