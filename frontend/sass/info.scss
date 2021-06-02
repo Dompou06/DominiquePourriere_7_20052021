@@ -2,6 +2,8 @@
 @import "libs/variables.scss";
 @import "libs/functions.scss";
 @import "libs/mixins.scss";
+
+@media #{$mobile-up} {
 #select {
     z-index: 20;
 }
@@ -21,7 +23,7 @@ main {
     padding: 0;
 }
 #articles--info {
-    height: 68vh;
+    height: 60vh;
     margin-top: 2vh;
     overflow-y: auto;
     & #contact {
@@ -37,10 +39,18 @@ main {
         color: white;
         background-color: $primary;
     }
+    & .reponse {
+        margin-bottom: 2vh;
+    }
+}
+h2 {
+    margin-bottom: 2vh;
 }
 footer {
-    margin-top: -15vh;
+    position: absolute;
+    bottom: -1vh;
     line-height: 2.5rem;
     color: white;
     background-color: $secondary;
+}
 }

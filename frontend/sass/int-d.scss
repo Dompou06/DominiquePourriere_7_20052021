@@ -2,48 +2,49 @@
 @import "libs/functions.scss";
 @import "libs/mixins.scss";
 
-@media #{$desktop-up} {
+@media #{$tablet-up} {
     body { 
+        position: relative;
         height: 100vh;
         overflow: hidden;
     }
     .txtweight {font-weight: 600;}
     #backgroung--body {
-        margin: -25vh auto 0 -45vw;
+        position: absolute;
+        margin: -25vh auto 0 -43.7vw;
         font-size: 2rem;
         width: 60vw;
         height: 150vh;
         border-radius: 0 120vw 120vw 0 ;
         background-color: $primary; 
         overflow: hidden;
+        z-index: 1;
     }
     header {
-        position: fixed;
-        top: 2vh;
-        left: 2vw;
-        z-index: 10;
+        position: relative;
+        margin: 2vh 0 0 2vw;
+        z-index: 20;
         & #header_int{
             & #logo_int {
             background-image: url('../../img/logo_int_d.svg');
             // background-position: top 20% left 18vw; 
-                background-repeat: no-repeat; 
+            background-repeat: no-repeat; 
             width: 20vw;
             height: 20vh;
-            //   margin: 10vh 0 0 46vw;
+            //margin: 10vh 0 0 46vw;
             }
         }
     }
     #dropdown--profil {
-        position: fixed;
-        top: 20vh;
-        left: 8.5vw;
-        width: 25vw;
-        // margin-bottom: 15vh;
+        position: relative;
+        margin-left: 10vw;
         font-weight: 600;
         z-index: 20;
         & p { font-size: 2.5rem;}
         & #items_profil {
+            position: absolute;
             margin: -9vh 0 0 -6vw;
+           width: 3vw;
             color: $secondary;
             & li {
                 width: 3vw;
@@ -74,24 +75,22 @@
         z-index: 10;
     }
     main {
-            position: fixed !important;
-            top: 30vh;
-            left: 7vw;
-            height: 65vh;
+            height: 70vh;
+            margin: -8.5vh 0 0 17vw;
+            overflow: none;
             z-index: 10;
             .nav_int {
                 margin-top: 3vh;
             }
             & #circle--messages {
-                margin: 3vh 0 0 -1vw;
+                margin: 11vh 0 0 -9vw;
             }
             & .add-article {
-                width: 3vw;
-                height: 3vw;
-                margin-top: -8vh;
-                margin-left: 3.5vw;
-                border-radius: 1.5vw 1.5vw;
-                line-height: 2.5vw;
+                width: 2vw;
+                height: 2vw;
+                margin: -1.5vh 0 0 -7.7vw;
+                border-radius: 1vw 1vw;
+                line-height: 2vw;
                 text-align: center;
                 font-size: 2rem;
                 font-weight: 800;
@@ -104,7 +103,7 @@
                 border-radius: 2.5vw 2.5vw;
                 font-size: 5vh;
                 line-height: 5vw;
-                margin: 25vh 0 0 -31.5vw;
+                margin: 30vh 0 0 -39.5vw;
                 background-color: white;
                 & .fa-caret-down {
                     font-size: 10vh;
@@ -112,16 +111,14 @@
                 }
             }
             & #circle--images {
-                margin: 17vh 0 0 -30.5vw;
+                margin: 23vh 0 0 -33.5vw;
             }
             & #circle--images--profil {
                 margin: 17vh 0 0 -32.5vw;
             }
             & #articles {
-                position: fixed;
-                top: 25vh;
-                left: 15vw;
-                width: 84vw;
+                width: 81vw;
+                margin-top: -63.5vh;
                 overflow: hidden;
                 z-index: 10;
             }
@@ -230,11 +227,12 @@
                                 }    
                             }
                             & .file {
-                                height: 30vh;
-                                margin-top: .5vh;
+                                margin: .5vh 0 3vh 0;
+                                text-align: center;
                             }
                             & .article--body {
                                 font-size: 1.3rem;
+                                margin-bottom: 3vh;
                                 & .first--p {
                                     margin-top: -3vh;
                                 }
@@ -408,9 +406,16 @@
                 }
                 & #author--profil {
                     margin-left: 7vw;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
                     & img {
-                    height: 100%;
-                    display: block;}
+                        flex-shrink: 0;
+                        min-width: 100%;
+                        min-height: 100%;
+                        object-fit: cover;
+                    }
                     & #initial-author {
                         line-height: 10vw;
                         font-size: 4rem;

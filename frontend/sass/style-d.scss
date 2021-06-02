@@ -2,7 +2,7 @@
 @import "libs/functions.scss";
 @import "libs/mixins.scss";
 
-@media #{$desktop-up} {
+@media #{$tablet-up} {
     .litlecircle {
         margin-top: 1vh;
         width: 2vw;
@@ -15,7 +15,6 @@
 .form--connexion {
     margin-left: -2vw;
 }
-
     // Accueil
 #body_home {
     background-image: url(../../img/home_d.jpg);

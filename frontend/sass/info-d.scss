@@ -1,0 +1,68 @@
+@import "libs/variables.scss";
+@import "libs/functions.scss";
+@import "libs/mixins.scss";
+
+@media #{$tablet-up} {
+    .fa-caret-down {
+    rotate: -90deg;
+    }
+    #infos {
+        position: relative;
+            width: 20vw;
+            margin: -28.5vh 0 0 -5vw;
+            z-index: 20;
+        & .circle-moyen {
+            width: 2.5vw;
+            height: 2.5vw;
+            border-radius: 1.2vw 1.2vw;
+            margin: 0 0 0 0;
+            font-size: 1rem;
+            line-height: 2.5vw;
+            color: white;
+            overflow: hidden;
+        }
+        & .picto--infos {
+            cursor: pointer;
+        }
+    }
+    #articles--info {
+        position: absolute;
+        top: 0;
+        height: 68vh;
+        width: 78vw;
+        overflow-y: auto;
+        & p {
+            margin-bottom: 1vh;
+        }
+        & #contact {
+            margin-top: 20vh;
+            line-height: 2.5rem;
+        }
+        & .litlecircle {
+            width: 2vw;
+            height: 2vw;
+            border-radius: 1vw 1vw;
+            line-height: 2vw;
+            font-weight: 800;
+            color: white;
+            background-color: $primary;
+        }
+        & .reponse {
+            margin: 1vh 0 2vh 0;
+        }
+    }
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 3vh;
+        }
+    textarea {
+        margin-top: 2vh;
+    }
+    footer {
+        position: absolute;
+        bottom: -3vh;
+        line-height: 2.5rem;
+        color: white;
+        background-color: $secondary;
+    }
+}

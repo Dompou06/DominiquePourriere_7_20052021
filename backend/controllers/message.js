@@ -179,6 +179,7 @@ exports.getOneMessage = (req, res) => {
     
 };
 exports.deleteOneMessage = (req, res) => {
+    const idMessage = req.params.id;
     const headerValue = req.headers.authorization; 
     const token = headerValue.substr(6);
     const decodedToken = jwt.verify(token, process.env.TOKEN);

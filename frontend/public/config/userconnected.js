@@ -27,9 +27,9 @@ if(tokenStorage === '') {
     <div id="connexion_button" class="row">
     <div class="col-1"></div>
       <div id="cancel--connexion" class="litlecircle cursor" aria-label="Annulez">X</div>
-      <div id="connexion_reponse" class="col-6 col-sm-6 col-lg-6"><!-- Réponse backend si erreur --></div>
+      <div id="connexion_reponse" class="col-6 col-sm-6 col-md-6"></div>
       <div id="login" class="login litlecircle cursor" aria-label="Validez votre connexion"><i class="fas fa-check"></i></div>
-      <div class="col-1 col-sm-1 col-lg-2"></div>
+      <div class="col-1 col-sm-1 col-md-2"></div>
       </div>
     `;
 
@@ -88,7 +88,7 @@ if(tokenStorage === '') {
     <div class="row">
     <div class="col-1"></div>
       <div id="cancel--inscription" class="litlecircle text-center cursor" aria-label="Annulez">X</div>
-      <div id="inscription_reponse" class="col-7 col-sm-7 col-lg-4"></div>
+      <div id="inscription_reponse" class="col-7 col-sm-7 col-md-4"></div>
       <div id="signup" class="signup litlecircle text-center cursor" aria-label="Validez votre inscription"><i class="fas fa-check"></i></div>
       </div>
     </div>
@@ -149,7 +149,7 @@ else {
 }
 
 function autologin () {
-    console.log('tokenStorage', tokenStorage);
+    // console.log('tokenStorage', tokenStorage);
     if(tokenStorage !== ''){
         const urlAutoLogin = 'http://localhost:3000/api/auth/userid/';
         postUser = async function () {
@@ -161,7 +161,7 @@ function autologin () {
             });
             try {
                 let result = await reponse.json();
-                console.log('result', reponse.status);
+                // console.log('result', result);
                 if(reponse.ok) {
                 //  console.log('result', result);
                     window.location.assign('./pages/messages.html');
@@ -174,7 +174,7 @@ function autologin () {
                 }
             }
             catch (error) {
-                console.log(error);
+                //   console.log('error');
             }
         };
         postUser();
@@ -220,15 +220,16 @@ function login () {
                         window.location.assign('./pages/messages.html');
                     }
                     else {
-                        document.querySelector('#connexion_input #connexion_reponse').innerHTML = 'Connexion invalide';
-                        // document.getElementById('connexion_reponse');
+                        // console.log('no');
+                        document.getElementById('connexion_reponse').innerHTML = 'Connexion invalide';
                     }
                 }
             }
             catch(error) {
-                console.log('error', error);
-                const reponseError = JSON.parse(error);
-                document.querySelector('#connexion_input #connexion_reponse').innerHTML = reponseError.message;
+                //console.log('no'); 
+                //  console.log('error', error.message);
+                // const reponseError = JSON.parse(error);
+                document.getElementById('connexion_reponse').innerHTML = 'Connexion invalide';
             }
         };
         const inputLogin = {
@@ -294,11 +295,12 @@ function signup() {
                     } 
                     else {
                         //console.log(result);
-                        document.getElementById('inscription_reponse').innerHTML = result.message;
+                        document.getElementById('inscription_reponse').innerHTML = 'Inscription invalide';
                     }
                 }
                 catch(error) {
-                    console.log(error);
+                    // console.log(error);
+                    document.getElementById('inscription_reponse').innerHTML = 'Inscription invalide';
                 }
             };
             insertSignup(dataSignup);
@@ -306,7 +308,6 @@ function signup() {
         }
         //Avec un fichier avatar
         else {
-            // console.log('?????')
             const insertSignup = async function (data) {
                 let reponse = await fetch(urlPostSignup, {
                     method: 'POST',

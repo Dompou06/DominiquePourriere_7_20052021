@@ -6,15 +6,6 @@ const mysqlUser = process.env.MYSQL_USER;
 const mysqlPassword = process.env.MYSQL_PASS;
 const mysqlDB = process.env.MYSQL_DB;
 
-
-/*Set ConnHandle = Server.CreateObject("ADODB.Connection")
-ConnHandle.Open "driver={SQL Server};
-server=mysqlHost;
-uid=mysqlUser;
-pwd=mysqlPassword;
-database=mysqlDB";
-module.exports = ConnHandle;*/
-
 const connectionOptions = {
     host: mysqlHost,
     port: mysqlPort,

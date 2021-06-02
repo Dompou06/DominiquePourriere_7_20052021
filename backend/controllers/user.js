@@ -11,33 +11,43 @@ const decrypted = require('../utils/crypt');
 exports.user = (req, res) => {
     const token = req.headers.authorization; 
     //  console.log('headerValue', headerValue);
+    // const tokensplit = req.headers.authorization.split(' ');
+    // console.log('tokensplit', tokensplit);
     // On récupère l'userId dans le token
-    const decodedToken = jwt.verify(token, process.env.TOKEN);
-    let idUser = decodedToken.id;    
-    // console.log(idUser);
-    db.query('SELECT *, NULL AS password FROM users WHERE id_user = ?', idUser, (error, result) => {
-        if(result === undefined){
+    try {
+        const decodedToken = jwt.verify(token, process.env.TOKEN);
+        //console.log('decodedToken', decodedToken);       
+        let idUser = decodedToken.id;    
+        // console.log(idUser);
+        db.query('SELECT *, NULL AS password FROM users WHERE id_user = ?', idUser, (error, result) => {
+            if(result === undefined){
             // En production
-            if(process.env.NODE_ENV === 'production'){
+                if(process.env.NODE_ENV === 'production'){
                 // console.log(error);
-                return res.status(httpStatus.NOT_FOUND).json({ message: 'Utilisateur inconnu' });
-            } 
-            // En développement
-            // console.log('error', error);
-            return res.status(httpStatus.NOT_FOUND).json({ message: 'Utilisateur inconnu' });          
-        }
-        else {
+                    return res.status(httpStatus.NOT_FOUND).json({ message: 'Utilisateur inconnu' });
+                } 
+                // En développement
+                // console.log('error', error);
+                return res.status(httpStatus.NOT_FOUND).json({ message: 'Utilisateur inconnu' });          
+            }
+            else {
             // console.log(result);
             // On vérifie s'il a un statut
-            db.query('SELECT * FROM users WHERE user_admin = ?', idUser, (error, res) => {        
-                console.log('res', res);
-                return res.status(httpStatus.OK).json({
-                    firstnameDecrypt: decrypted.decrypt(result[0].firstname),
-                    lastnameDecrypt: decrypted.decrypt(result[0].lastname)
+                db.query('SELECT * FROM users WHERE user_admin = ?', idUser, (error, res) => {        
+                    console.log('res', res);
+                    return res.status(httpStatus.OK).json({
+                        firstnameDecrypt: decrypted.decrypt(result[0].firstname),
+                        lastnameDecrypt: decrypted.decrypt(result[0].lastname)
+                    });
                 });
-            });
-        }
-    });
+            }
+        });
+    } catch(err) {
+        // Le token n'est pas valide
+        // console.log('err', err);
+        return res.status(httpStatus.NOT_FOUND).json({ message: ':(' });
+    }
+
 };
 exports.signup = (req, res) => {
     let dateCreate = new Date();   
@@ -58,7 +68,7 @@ exports.signup = (req, res) => {
         };
         // console.log(dataUser);
     }
-    else{
+    else {
         //const storage = 'media';
         // console.log('storage', storage);
         filename = req.file.filename;
@@ -187,7 +197,7 @@ exports.profil = (req, res) => {
     if(idAuthor === 'null') {
         idAuthor = idUser;
     }
-    //console.log('idAuthor',idAuthor);
+    console.log('idAuthor',idAuthor);
     db.query(`SELECT *, NULL AS password 
     FROM users u
     LEFT JOIN departements d ON d.id = u.departement 
@@ -238,7 +248,7 @@ exports.delete = (req, res) => {
 
     if (profileUpadating === 'null') {
         idProfile = userRights;
-        // console.log('idProfile', idProfile);
+        console.log('idProfile', idProfile);
         db.query('SELECT image_user FROM users WHERE id_user = ?', idProfile, (error, result) => {
             // On vérifie si un fichier se trouve dans BD
             // console.log('result', result[0].image_user);

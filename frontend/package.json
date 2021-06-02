@@ -16,6 +16,7 @@
     "footer-m": "sass --watch ./sass/footer-m.scss:./public/assets/css/footer-m.css",
     "footer-d": "sass --watch ./sass/footer-d.scss:./public/assets/css/footer-d.css",
     "info": "sass --watch ./sass/info.scss:./public/assets/css/info.css",
+    "info-d": "sass --watch ./sass/info-d.scss:./public/assets/css/info-d.css",
     "lint": "eslint controllers models routes middleware --fix",
     "start": "node server.js"
   },

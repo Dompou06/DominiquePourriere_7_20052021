@@ -12,7 +12,7 @@ function newMessage() {
             <label for="newtitle" class="bgsecondary text-center" aria-label="Espace titre">
             <i class="fas fa-heading"></i></label>
           </div>
-          <textarea id="newtitle" class="col-10 col-sm-10 col-lg-11 message--textarea--title no--empty" placeholder="Titre du message" required></textarea>
+          <textarea id="newtitle" class="col-10 col-sm-10 col-md-11 message--textarea--title no--empty" placeholder="Titre du message" required></textarea>
         </div>
         <div class="row message">
             <div class="col-3"></div>
@@ -29,14 +29,14 @@ function newMessage() {
                 <i class="fas fa-comment-dots"></i>
               </label>
             </div>
-            <textarea id="caption" class="col-10 col-sm-10 col-lg-11 message--textarea--title" placeholder="Description, si fichier"></textarea>
+            <textarea id="caption" class="col-10 col-sm-10 col-md-11 message--textarea--title" placeholder="Description, si fichier"></textarea>
         </div>
         <div class="row message">
             <div class="col-2 message--label">
               <label for="neweditor" class="bgsecondary text-center" aria-label="Espace texte">
                 <i class="fas fa-keyboard"></i></label>
             </div>
-            <textarea id="neweditor" class="col-10 col-sm-10 col-lg-11 no--empty" rows="6" placeholder="Texte du message" required></textarea>
+            <textarea id="neweditor" class="col-10 col-sm-10 col-md-11 no--empty" rows="6" placeholder="Texte du message" required></textarea>
         </div>
         <div class="buttons--post row">
               <div class="col-2"></div>

@@ -26,45 +26,45 @@ getProfile = async function () {
             document.getElementById('user--profil').innerHTML = `
         <div id="id--profil" class="hidden">${profilId}</div>
         <div class="row m--profile">
-        <div class="col-12 col-sm-12 col-lg-6">
+        <div class="col-12 col-sm-12 col-md-6">
         <div class="row">
-        <div class="col-12 col-sm-12 col-lg-5">
+        <div class="col-12 col-sm-12 col-md-5">
         <div class="circle-moyen bgprimary text-center txtweight txtwhite txt--circle mb-2">Nom</div>
         </div>
-        <div class="col-12 col-sm-12 col-lg-7">
+        <div class="col-12 col-sm-12 col-md-7">
         <div id="firstname" class="mb-2 txtweight">${profile.firstnameDecrypt}</div>
         </div>
         </div>
         </div>
-        <div class="col-12 col-sm-12 col-lg-6">
+        <div class="col-12 col-sm-12 col-md-6">
         <div class="row">
-        <div class="col-12 col-sm-12 col-lg-5">
+        <div class="col-12 col-sm-12 col-md-5">
         <div class="circle-moyen bgprimary text-center txtweight txtwhite txt--circle mb-2">Prénom</div>
         </div>
-        <div class="col-12 col-sm-12 col-lg-7">
+        <div class="col-12 col-sm-12 col-md-7">
         <div id="lastname" class="mb-2 txtweight">${profile.lastnameDecrypt}</div>
         </div>
         </div>
         </div>
         </div>
         <div class="row">
-        <div class="col-12 col-sm-12 col-lg-6">
+        <div class="col-12 col-sm-12 col-md-6">
         <div class="row">
-        <div class="col-12 col-sm-12 col-lg-3">
+        <div class="col-12 col-sm-12 col-md-3">
         <div class="circle-moyen bgprimary text-center txtweight txtwhite txt--circle mb-2">Avatar</div>
         </div>
-        <div class="col-12 col-sm-12 col-lg-7">
+        <div class="col-12 col-sm-12 col-md-7">
         <div id="author--profil" class="circle-moyen text-center mb-2">
         </div>
         </div>
         </div>
         </div>
-        <div class="col-12 col-sm-12 col-lg-6">
+        <div class="col-12 col-sm-12 col-md-6">
         <div class="row">
-        <div class="col-12 col-sm-12 col-lg-5">
+        <div class="col-12 col-sm-12 col-md-5">
         <div class="circle-moyen bgprimary text-center"><i class="fas fa-tag"></i></div>
         </div>
-        <div class="col-12 col-sm-12 col-lg-7">
+        <div class="col-12 col-sm-12 col-md-7">
         <div id="departement--name" class="mb-2 txtweight">${profile.nameDepartement}</div>
         <div id="departement--id" class="hidden">${profile.departement}</div>
         </div>
@@ -125,8 +125,8 @@ function updateProfile() {
    <div class="col-12">
    <div class="row">
        <input type="text" id="update_id" class="hidden no--empty" value="${idProfil}" required />
-       <input type="text" id="update_firstname" class="col-9 col-sm-9 col-lg-5 mt-3 no--empty" value="${firstname}" required />
-       <input type="text" id="update_lastname" class="col-9 col-sm-9 col-lg-5 no--empty" value="${lastname}" required />
+       <input type="text" id="update_firstname" class="col-9 col-sm-9 col-md-5 mt-3 no--empty" value="${firstname}" required />
+       <input type="text" id="update_lastname" class="col-9 col-sm-9 col-md-5 no--empty" value="${lastname}" required />
    </div>                    
    <div class="row">
        <div class="col-3">
@@ -139,14 +139,14 @@ function updateProfile() {
        </div>
    </div>
    <div class="departement--update row">                       
-       <div class="btn-group dropup col-3 col-sm-3 col-lg-2">
+       <div class="btn-group dropup col-3 col-sm-3 col-md-2">
            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <span><i class="fas fa-tag"></i></span>
            </button>
            <ul id="dropdown_departement" class="dropdown-menu" aria-labelledby="dropdown-menu">
            </ul>
        </div>
-       <div class="col-9 col-sm-9 col-lg-10">
+       <div class="col-9 col-sm-9 col-md-10">
        <input type="text" id="departement-update" class="col-8" value="${dep}" readonly />
        <input type="text" id="id-departement" class="hidden" value="${idDepart}" readonly />
        </div>
@@ -155,11 +155,11 @@ function updateProfile() {
 </div>
 </div>
 <div id="button--update" class="row">
-<div class="col-1 col-sm-1 col-lg-2"></div>
+<div class="col-1 col-sm-1 col-md-2"></div>
 <div class="col-2">
    <div id="cancel--update" class="cursor litlecircle" onclick="cancel()" aria-label="Annulez les modifications">X</div>
  </div>
- <div id="update_reponse" class="col-6 col-sm-6 col-lg-4"><!-- Réponse backend si erreur --></div>
+ <div id="update_reponse" class="col-6 col-sm-6 col-md-4"><!-- Réponse backend si erreur --></div>
  <div class="col-2">
    <div id="valid--profil" class="cursor litlecircle" aria-label="Validez vos modifications"><i class="fas fa-check"></i></div>
   </div>
@@ -282,10 +282,10 @@ function deleteProfile() {
                     clearStorage();
                     window.location.assign('../index.html');
                 }
-                //Sinon
+                //Sinon, c'est l'administrateur qui a supprimé le profil
                 else {
-                    document.location.assign('./profil.html');
-                    document.getElementById('user--profil').innerHTML = result.message;
+                    document.location.assign('../index.html');
+                    // document.getElementById('user--profil').innerHTML = result.message;
                 }
             }
             else {

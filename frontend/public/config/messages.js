@@ -41,11 +41,11 @@ getMessages = async function () {
               <div id="" class="file hidden"></div>
               <div class="article--body"></div>
               <div class="buttons--update row hidden">
-              <div class="col-1 col-sm-1 col-lg-1"></div>
+              <div class="col-1 col-sm-1 col-md-1"></div>
               <div class="button--cancel cursor" onclick="cancel()" aria-label="Annulez les modifications">X</div>
-              <div class="update_reponse col-6 col-sm-6 col-lg-8"><!-- Réponse backend si erreur --></div>
+              <div class="update_reponse col-6 col-sm-6 col-md-8"><!-- Réponse backend si erreur --></div>
               <div class="button--update cursor" aria-label="Validez vos modifications"><i class="fas fa-check"></i></div>
-              <div class="col-1 col-sm-1 col-lg-1"></div>
+              <div class="col-1 col-sm-1 col-md-1"></div>
               </div>
               </div>
             </article>
@@ -208,7 +208,7 @@ function oneMessage(messageId) {
                     firstParagraph.classList.add('first--p');
                 }
                 // Si l'auteur est l'utilisateur ou s'il a un statut de modérateur
-                console.log('message.hasAdminRights', message.hasAdminRights);
+                //   console.log('message.hasAdminRights', message.hasAdminRights);
                 if(message.hasAdminRights === true) {
                     let actionMessage = document.querySelectorAll(`#message_${messageId} .action`);
                     for (let i = 0; i < actionMessage.length; i++) {
@@ -306,8 +306,9 @@ function updateMessage(messageId) {
 function cancel() {
     document.location.reload();
 }
-function deleteMessage(deleteId) {
-    const urlMessage = `http://localhost:3000/api/messages/${deleteId}`;
+function deleteMessage(messageId) {
+    console.log('messageId', messageId);
+    const urlMessage = `http://localhost:3000/api/messages/${messageId}`;
     deleteOneMessage = async function () {
         try {
             //  console.log('deleteId', deleteId);
